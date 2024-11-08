@@ -86,5 +86,10 @@ namespace GestionDeInventario
             Console.WriteLine($"Productos con precio mayor a 500: {mayoresA500}");
         }
 
+        public IEnumerable<Producto> ObtenerProductos()
+        {
+            return productos;
+        }
+
     }
 }
