@@ -60,5 +60,19 @@ namespace GestionDeInventario
             productos = productosActualizados;
         }
 
+        public void EliminarProducto(string nombreProducto)
+        {
+            var productoAEliminar = productos.FirstOrDefault(p => p.Nombre.Equals(nombreProducto, StringComparison.OrdinalIgnoreCase));
+            if (productoAEliminar != null)
+            {
+                productos.Remove(productoAEliminar);
+                Console.WriteLine($"Producto '{nombreProducto}' eliminado del inventario.");
+            }
+            else
+            {
+                Console.WriteLine($"Producto '{nombreProducto}' no encontrado.");
+            }
+        }
+
     }
 }
